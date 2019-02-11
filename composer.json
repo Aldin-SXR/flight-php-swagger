@@ -1,0 +1,16 @@
+{
+    "name": "tribeos/flight-php-swagger",
+    "description": "FlightPHP micro-framework bundled with Swagger and other useful utilities.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aldin Kovačević",
+            "email": "aldin.kovacevic.97@gmail.com"
+        }
+    ],
+    "require": {
+        "mikecao/flight": "^1.3",
+        "zircote/swagger-php": "^3.0"
+    }
+}

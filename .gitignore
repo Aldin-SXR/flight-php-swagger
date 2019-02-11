@@ -1,0 +1,6 @@
+/vendor
+/.vscode
+/.idea
+/composer.lock
+/logs/*
+!.htaccess
