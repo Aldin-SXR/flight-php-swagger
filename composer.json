@@ -9,8 +9,12 @@
             "email": "aldin.kovacevic.97@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "mikecao/flight": "^1.3",
         "zircote/swagger-php": "^3.0"
+    },
+    "autoload": {
+        "files": ["index.php"]
     }
 }
