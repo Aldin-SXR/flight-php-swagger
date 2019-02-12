@@ -1,0 +1,11 @@
+{
+    "package": {
+        "name": "tribeos/flight-php-swagger",
+        "version": "0.1.0",
+        "source": {
+          "url": "https://gitlab.tribeos.io/tribeos/flight-php-swagger.git",
+          "type": "git",
+          "reference": "master"
+        }
+    }
+}
