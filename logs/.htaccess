@@ -1,0 +1,2 @@
+# Disallow outside access to logs.
+Deny from all

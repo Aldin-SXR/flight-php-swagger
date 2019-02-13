@@ -4,9 +4,8 @@ class Logger {
     private $file_name;
     private $dir_path;
 
-    public function __construct($dir_path, $file_name) {
+    public function __construct($file_name) {
         $this->file_name = $file_name;
-        $this->dir_path = $dir_path;
     }
 
     private function process_response($response) {
@@ -32,10 +31,10 @@ class Logger {
             "response" => $this->process_response($response)
         ];
         /* Write to file */
-        if (!is_dir($this->dir_path)) {
-            mkdir($this->dir_path, 0777, true);
-            file_put_contents($this->dir_path."/.htaccess", "Deny from all");
-        }
-        file_put_contents($this->dir_path."/".$this->file_name, print_r($log, true)."=================================\n", FILE_APPEND);
+        // if (!is_dir($this->dir_path)) {
+        //     mkdir($this->dir_path, 0777, true);
+        //     file_put_contents($this->dir_path."/.htaccess", "Deny from all");
+        // }
+        file_put_contents($this->file_name, print_r($log, true)."=================================\n", FILE_APPEND);
     }
 }

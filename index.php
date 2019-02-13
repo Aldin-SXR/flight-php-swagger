@@ -1,11 +1,26 @@
 <?php
-require_once __DIR__."/utils/Logger.php";
+/**
+ * Entry point for the FlightPHP project, bundled with Swagger OpenAPI documentation generator.
+ */
 
-Flight::register("logger", "Logger", [ "logs", "debug.log" ]);
+require_once __DIR__."/vendor/autoload.php";
+require_once __DIR__."/docs/swagger.php";
 
-/* Flight middleware | Logging */
-Flight::after("start", function(&$params, &$output) {
-    if (Flight::request()->url !== "/") {
-        Flight::logger()->log(Flight::request(), Flight::response());
-    }
-});
+/**
+ * Required files, modules & libraries.
+ */
+require_once __DIR__."/config/Config.php";
+foreach (glob(__DIR__."/app/utils/*.php") as $utils) {
+    require_once $utils;
+}
+foreach (glob(__DIR__."/app/routes/*.php") as $routes) {
+    require_once $routes;
+}
+foreach (glob(__DIR__."/app/models/*.php") as $models) {
+    require_once $models;
+}
+
+/**
+ * Start the Flight framework.
+ */
+Flight::start();
