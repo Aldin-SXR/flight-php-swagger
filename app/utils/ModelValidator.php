@@ -24,10 +24,10 @@ class ModelValidator {
             foreach ($analysis->annotations as $annotation) {
                 $model = self::extract_property($annotation->_context);
                 if (isset($model["name"]) && $model["name"] == $class_name) {
-                    if ($annotation->required == true || $annotation->required == "true") {
-                        if (!isset($data[$model["property"]]) || $data[$model["property"]] == "") {
+                    if ($annotation->required === true || $annotation->required === "true") {
+                        if (!isset($data[$model["property"]]) || $data[$model["property"]] === "") {
                             /* Send out an error message */
-                            Flight::json([
+                            Flight::output([
                                 "error_message" => "Field `".$model["property"]."` is required."
                             ], 400);
                             die;
@@ -36,9 +36,8 @@ class ModelValidator {
                 }
             }
         }
-        /* Model is valid */
-        return true;
     }
+    
     /**
      * Extract property.
      * Take out a model proprety's name and respetive class name.
