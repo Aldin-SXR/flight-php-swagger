@@ -1,0 +1,32 @@
+<phpunit colors="true" bootstrap="vendor/autoload.php">
+    <filter>
+        <whitelist>
+            <!-- The name of the folder to use for code coverage -->
+            <directory suffix=".php">app/</directory>
+            <exclude>
+                <!-- Files/folders excluded from code coverage (PHP files without testable methods). Edit according to your project needs. -->
+                <directory suffix=".php">app/models</directory>
+                <directory suffix=".php">app/routes</directory>
+                <file>app/utils/Logger.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <!-- Types of testing logs -->
+        <log type="testdox-html" target="tests/build/testdox.html"/>
+        <log type="tap" target="tests/build/report.tap"/>
+        <log type="junit" target="tests/build/report.junit.xml"/>
+        <log type="coverage-html" target="tests/build/coverage"/>
+        <log type="coverage-text" target="tests/build/coverage.txt"/>
+        <log type="coverage-clover" target="tests/build/logs/clover.xml"/>
+    </logging>
+    <testsuites>
+        <testsuite name="sample-test-suite">
+            <!-- Directory where tests are stored -->
+            <directory suffix="Test.php">tests/src/</directory>
+            <!-- By default, test files will be run in alphabetical file order. If you want to set a specific order of execution, define individual test files-->
+            <!-- <file>tests/src/SampleTest.php</file> -->
+            <!-- Compiled code coverage results will be stored in the tests/build directory -->
+        </testsuite>
+    </testsuites>
+</phpunit>
