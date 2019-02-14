@@ -9,7 +9,7 @@
             "email": "aldin.kovacevic.97@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "mikecao/flight": "^1.3",
         "zircote/swagger-php": "^3.0"
