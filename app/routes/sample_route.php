@@ -18,7 +18,8 @@
  *          required=true,
  *          description="Sample path parameter.",
  *          @OA\Schema(
- *              type="string"
+ *              type="string",
+ *              default="42"
  *          )
  *      ),
  *      @OA\RequestBody(
