@@ -30,11 +30,7 @@ class Logger {
             "request_body" => $request->data->getData(),
             "response" => $this->process_response($response)
         ];
-        /* Write to file */
-        // if (!is_dir($this->dir_path)) {
-        //     mkdir($this->dir_path, 0777, true);
-        //     file_put_contents($this->dir_path."/.htaccess", "Deny from all");
-        // }
+        
         file_put_contents($this->file_name, print_r($log, true)."=================================\n", FILE_APPEND);
     }
 }
