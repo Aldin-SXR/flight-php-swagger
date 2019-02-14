@@ -13,11 +13,11 @@ ini_set('display_errors', 1);
  */
 $arr = explode("/", $_GET['send']);
 if ($arr[0] == 'swagger.json') {
-   define('SERVER_ROOT', realpath(dirname(__FILE__)));
-   require_once SERVER_ROOT . "/../vendor/autoload.php";
-   $openapi = \OpenApi\scan(DOCS_ANNOTATION_LOCATIONS);
-   $openapi->servers[0]->url = API_BASE_PATH;
+    define('SERVER_ROOT', realpath(dirname(__FILE__)));
+    require_once SERVER_ROOT . "/../vendor/autoload.php";
+    $openapi = \OpenApi\scan(DOCS_ANNOTATION_LOCATIONS);
+    $openapi->servers[0]->url = API_BASE_PATH;
 
-   header('Content-Type: application/json');
-   echo $openapi->toJson();
+    header('Content-Type: application/json');
+    echo $openapi->toJson();
 }        
