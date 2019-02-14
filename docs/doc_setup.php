@@ -14,7 +14,7 @@
  * @OA\OpenApi(
  *   @OA\Server(
  *       url=API_BASE_PATH,
- *       description="TribeOS Blockchain Database API"
+ *       description=SERVER_DESCRIPTION
  *   )
  * )
  */

@@ -40,7 +40,7 @@
 Flight::route("POST /sample/[0-9]+", function() {
     $data = Flight::request()->data->getData();
     /* Pass in a data object for model validation; if invalid, the request will terminate. */
-    ModelValidator::validate_model(SampleModel::class, $data);
+    Flight::validate(SampleModel::class, $data);
     Flight::json([ 
         "success_response" => "[1]: [".$data["sample_attribute_1"]."] | [2]: [".$data["sample_attribute_2"]."]"
      ]);

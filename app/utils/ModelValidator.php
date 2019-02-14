@@ -11,7 +11,7 @@ class ModelValidator {
      * Given a class name and passed-in data, determine whether the data model is valid.
      * @param string $class_name Name of the model class.
      * @param array $data Model data being sent.
-     * @return array Returns a status array suggesting if the model is valid or invalid (with missing fields).
+     * @return array|null Returns a status array suggesting if the model is invalid (with missing fields), or NULL if it is valid.
      */
     public static function validate_model($class_name, $data) {
         $analyser = new \OpenApi\StaticAnalyser();
@@ -27,10 +27,9 @@ class ModelValidator {
                     if ($annotation->required === true || $annotation->required === "true") {
                         if (!isset($data[$model["property"]]) || $data[$model["property"]] === "") {
                             /* Send out an error message */
-                            Flight::output([
-                                "error_message" => "Field `".$model["property"]."` is required."
-                            ], 400);
-                            die;
+                            return [
+                                "invalid_field" => $model["property"]
+                            ];
                         }
                     }
                 }
