@@ -7,6 +7,8 @@
  * Project constants and definitions.
  */
 
+define("LOG_FILE", __DIR__."/../logs/debug.log");
+
 /**
  * Swagger configuration constants.
  * Change these constants to fit your project needs.

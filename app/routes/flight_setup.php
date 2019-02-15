@@ -6,7 +6,7 @@
  * Contents of the log, as well as its destination, can be modified inside the app/utils/Logger.php file.
  */
 
-Flight::register("logger", "Logger", [ __DIR__."/../../logs/debug.log" ]);
+Flight::register("logger", "Logger", [ LOG_FILE ]);
 
 /* Flight middleware | Logging */
 Flight::after("start", function(&$params, &$output) {
