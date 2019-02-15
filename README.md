@@ -12,8 +12,11 @@ This guides assumes that you are currently using (or planning to use) the follow
 ### Installing
 1. First, make sure that you have installed and configured a running web server (such as Apache) with 7.1 or higher. Moreover, 
 2. Use `composer` to download the project skeleton, install all required dependencies, and run the sample unit tests:
+
 `composer create-project tribeos/flight-php-swagger path/to/project -s dev`
+
 3. After the installation process finishes, confirm the removal of `VCS` data by confirming the following inquiry via `Y`:
+
 `Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]? Y`
 
 ### Project Structure
