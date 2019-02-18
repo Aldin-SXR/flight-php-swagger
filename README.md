@@ -55,19 +55,19 @@ path/to/project
 ```
 Rundown of main project components:
 
-`app`: the main application folder
+- `app`: the main application folder
     - `models`: models used for requests/responses
     - `routes`: definition of API routes
     - `utils`:  application utilites, such as validtors and loggers
-`config`: configuration file(s)
-`docs`: Swagger documentation files
-`logs`: logs storage
-`tests`: application tests folder
+- `config`: configuration file(s)
+- `docs`: Swagger documentation files
+- `logs`: logs storage
+- `tests`: application tests folder
     - `build`: any compiled files resulting form tests (code coverage, etc.)
     - `src`: test source files
-`vendor`: location of all libraries and third-party code
-`index.php`: API entry point and inclusion of all requried files
-`phpunit.xml`: PHPUnit testing configuration
+- `vendor`: location of all libraries and third-party code
+- `index.php`: API entry point and inclusion of all requried files
+- `phpunit.xml`: PHPUnit testing configuration
 
 ### Working on the project
 
