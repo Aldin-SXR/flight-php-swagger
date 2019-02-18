@@ -63,6 +63,7 @@ Rundown of main project components:
 `config`: configuration file(s)
 `docs`: Swagger documentation files
 `logs`: logs storage
+
 `tests`: application tests folder
 - `build`: any compiled files resulting form tests (code coverage, etc.)
 - `src`: test source files
