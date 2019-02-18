@@ -17,4 +17,11 @@
  *       description=SERVER_DESCRIPTION
  *   )
  * )
+ * @OA\SecurityScheme(
+ *      securityDefinition="Bearer",
+ *     type="apiKey",
+ *     in="header",
+ *     securityScheme="api_key",
+ *     name=AUTH_HEADER_NAME
+ * )
  */

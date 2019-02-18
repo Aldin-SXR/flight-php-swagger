@@ -13,11 +13,7 @@ This guides assumes that you are currently using (or planning to use) the follow
 1. First, make sure that you have installed and configured a running web server (such as Apache) with 7.1 or higher. Moreover, 
 2. Use `composer` to download the project skeleton, install all required dependencies, and run the sample unit tests:
 
-    `composer create-project tribeos/flight-php-swagger path/to/project -s dev`
-
-3. After the installation process finishes, confirm the removal of `VCS` data by confirming the following inquiry via `Y`:
-
-    `Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]? Y`
+    `composer create-project tribeos/flight-php-swagger path/to/project`
 
 ### Project structure
 Once the installation is finished, you will find this structure in your project:
@@ -273,10 +269,11 @@ The flag `--testdox` is optional, but recommended, as it will generate descripti
 After executing the tests, the code coverage report is generated inside `tests/build/coverage` directory, and can be viewed by opening this path via a browser.
 
 ## Authors
-- __Aldin Kovačević__ - _initial work_ - [Aldin-SXR](https://github.com/Aldin-SXR)
+- __Aldin Kovačević__, _initial work on the skeleton and documentation_ - [Aldin-SXR](https://github.com/Aldin-SXR)
 
 ## License
-The skeleton is licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) license.
+The skeleton is licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) license. See the [LICENSE](https://github.com/Aldin-SXR/flight-php-swagger/blob/master/LICENSE) file for details.
 
 ---
+
 _Work in progress._ 

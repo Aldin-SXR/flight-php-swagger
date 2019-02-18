@@ -1,11 +1,23 @@
 <?php
-
 /**
- * Sample Flight endpoint for deomstrating Flight and Swagger functionalities.
+ * Sample Flight endpoints for demonstrating Flight and Swagger functionalities.
  * This file can be safely removed.
  */
 
- /* Sample endpoint to test the functionality of FlightPHP routing. */
+ /**
+ * @OA\Get(
+ *      path="/sample/",
+ *      tags={"sample"},
+ *      summary="Sample endpoint to test the functionality of Flight and Swagger. ",
+ *      @OA\Response(
+ *          response=200,
+ *          description="A sample response."
+ *      )
+ * )
+ */
+Flight::route("GET /sample/", function() {
+    Flight::json([ "sample_route" => "Sample response." ]);
+});
 
  /**
  * @OA\Post(
@@ -35,7 +47,10 @@
  *           response=400,
  *           description="Sample error response.",
  *          @OA\JsonContent(ref="#/components/schemas/SampleError")
- *      )
+ *      ),
+ *     security={
+ *          {"api_key": {}}
+ *      }
  * )
  */
 Flight::route("POST /sample/[0-9]+", function() {

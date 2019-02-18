@@ -24,6 +24,7 @@ define("DOCS_ANNOTATION_LOCATIONS", [
 
 /* Project definitions */
 define("API_BASE_PATH", "http://localhost/".explode("/", dirname(dirname(__FILE__)))[count(explode("/", dirname(dirname(__FILE__)))) - 1]); // path to your server/API
+define("AUTH_HEADER_NAME", "Authorization"); // name of the authorization header to be used
 define("SERVER_DESCRIPTION", "Flight/Swagger API skeleton."); // description of the host server
 define("PROJECT_TITLE", "Flight/Swagger bundle"); // project title
 define("PROJECT_DESCRIPTION", "FlightPHP micro-framework bundled with Swagger and other useful utilities."); // project description
