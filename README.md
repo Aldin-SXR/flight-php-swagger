@@ -60,7 +60,7 @@ Rundown of main project components:
 - `routes`: definition of API routes
 - `utils`:  application utilites, such as validtors and loggers
 
-`conifg`: configuration file(s)
+`config`: configuration file(s)
 `docs`: Swagger documentation files
 `logs`: logs storage
 `tests`: application tests folder
@@ -256,6 +256,23 @@ class SampleTest extends TestCase {
     }
 }
 ```
+
+#### Test execution
+To execute all tests, run `vendor/bin/phpunit --testdox` inside the project's root directory. 
+
+```xml
+root@ubuntu:/path/to/project$ vendor/bin/phpunit --testdox
+PHPUnit 7.5.4 by Sebastian Bergmann and contributors.
+
+Sample
+ ✔ This is a sample test
+```
+
+To run only a single test file, supply its path: `vendor/bin/phpunit --testdox tests/src/SampleTest.php` 
+
+The flag `--testdox` is optional, but recommended, as it will generate descriptive sentences about the tests based on their names (as discussed in the section above), making it easier to understand what had been going on inside the tests.
+
+After executing the tests, the code coverage report is generated inside `tests/build/coverage` directory, and can be viewed by opening this path via a browser.
 
 ## Authors
 - __Aldin Kovačević__ - _initial work_ - [Aldin-SXR](https://github.com/Aldin-SXR)
