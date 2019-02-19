@@ -1,7 +1,7 @@
 {
     "name": "tribeos/flight-php-swagger",
     "description": "FlightPHP micro-framework bundled with Swagger and other useful utilities.",
-    "type": "library",
+    "type": "project",
     "license": "MIT",
     "version": "0.5.0",
     "authors": [
