@@ -8,9 +8,10 @@ Designed to help kick-start the development of APIs built with the aforementione
 This guides assumes that you are currently using (or planning to use) the following technologies in your project:
 - PHP 7.1+
 - [Composer](https://getcomposer.org/)
+- [Xdebug](https://xdebug.org/) (required if you plan on using PHPUnit)
 
 ### Installing
-1. First, make sure that you have installed and configured a running web server (such as Apache) with 7.1 or higher. Moreover, 
+1. First, make sure that you have installed and configured a running web server (such as Apache) with PHP 7.1 or higher.
 2. Use `composer` to download the project skeleton, install all required dependencies, and run the sample unit tests:
 
     `composer create-project tribeos/flight-php-swagger path/to/project`
