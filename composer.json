@@ -21,7 +21,7 @@
     "scripts": {
         "post-create-project-cmd": [
             "@php -r \"file_exists('config/Config.php') || copy('config/Config.sample.php', 'config/Config.php');\"", 
-            "@php -r \"explode(' ', php_uname('s'))[0] !== 'Windows' && exec('chmod =rwx,g+s -R logs/');\"",
+            "@php -r \"explode(' ', php_uname('s'))[0] !== 'Windows' && exec('chmod -R 777 logs/');\"",
             "phpunit --testdox"
         ]
     }
