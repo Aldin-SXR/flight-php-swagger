@@ -1,17 +1,22 @@
 <?php
 
+use HttpLog\HttpLogger;
+
 /**
  * FlightPHP logger.
  * Logs all incoming requests and outgoing responses into a log file, using FightPHP middleware. 
  * Contents of the log, as well as its destination, can be modified inside the app/utils/Logger.php file.
  */
 
-Flight::register("logger", "Logger", [ LOG_FILE ]);
+/* Disbale FlightPHP's internal error logger. */
+Flight::set('flight.handle_errors', false);
+HttpLogger::create("file", "full+h", __DIR__."/../../logs/debug.log", false);
 
 /* Flight middleware | Logging */
 Flight::after("start", function(&$params, &$output) {
     if (Flight::request()->url !== "/") {
-        Flight::logger()->log(Flight::request(), Flight::response());
+        $logger = HttpLogger::get();
+        $logger->log();
     }
 });
 
@@ -25,7 +30,8 @@ Flight::after("start", function(&$params, &$output) {
 Flight::map("output", function($data, $response_code  = 200) {
     header('Content-Type: application/json');
     Flight::json($data, $response_code);
-    Flight::logger()->log(Flight::request(), Flight::response());
+    $logger = HttpLogger::get();
+    $logger->log();
     die;
 });
 
