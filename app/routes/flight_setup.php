@@ -42,7 +42,7 @@ Flight::map("output", function($data, $response_code  = 200) {
  */
 Flight::map("validate", function($class, $data) {
     $validity = ModelValidator::validate_model($class, $data);
-    if (array_key_exists("invalid_field", $validity)) {
+    if ($validity && array_key_exists("invalid_field", $validity)) {
         Flight::output([
             "error_message" => "Field `".$validity["invalid_field"]."` is required."
         ], 400);
