@@ -4,6 +4,7 @@ require_once __DIR__."/../../app/utils/ModelValidator.php";
 
 /**
  * Sample test class which showcases some basic aspects of PHPUnit.
+ * This test file can be removed, or edited to suit your project needs.
  */
 class SampleTest extends TestCase {
     private $test_var;
