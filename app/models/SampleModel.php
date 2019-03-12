@@ -2,7 +2,7 @@
 /**
  * A sample model for the Swagger/OpenAPI specification.
  * Models are used to provide specifications on how API request bodies and reponses should look like.
- * This file can be safely deleted.
+ * This file can be safely deleted, or edited to suit your models.
  */
 
 
