@@ -120,28 +120,24 @@ Extensive usage documentation and examples regarding the PHP implementation are 
 #### Project utilities
 
 ##### Logger
-The project comes bundled with a request/response logger, which will (by default) log every incoming request and its corresponding response into `logs/debug.log`, as tab-separated values (TSV). The logger is configured in `utils\Logger.php`, and by default logs the following information:
-- request date
-- client IP address
-- request method
-- route
-- query parameters
-- request body
-- response body
-- request headers
-- response headers
+The project comes bundled with [http-logger](https://github.com/Aldin-SXR/http-logger), which is a HTTP request, response and error logger, that will (by default) log every incoming request and its corresponding response into `logs/debug.log`, as tab-separated values (TSV). Detailed logger information and configuration details can be found at [its GitHub page](https://github.com/Aldin-SXR/http-logger).
 
-`Logger` requries the location of the log file (which is by default configured via a constant in `config/Config.php`), and Flight request and response objects as parameters.
+The logger requires the location of the log file (which is by default configured via a constant in `config/Config.php`). Moreover, in order to fully utilize the logger's capabilities, Flight's internal error handler should be disabled.
+
 ```php
-Flight::register("logger", "Logger", [ LOG_FILE ]); // log file definition
+/* Disbale FlightPHP's internal error logger. */
+Flight::set('flight.handle_errors', false);
+HttpLogger::create("file", "full+h", LOG_FILE, false);
 
-Flight::logger()->log(Flight::request(), Flight::response());
+/* Get and use the logger */
+$logger = HttpLogger::get();
+$logger->log();
 ```
 
 The logger is included via `routes/flight_setup.php`, and configured inside the Flight middleware function `Flight::after()`, which runs after every request (so it is able to fetch the appropriate response). You can change the logger functionalities, as well as the routes it will watch, at your disclosure.
 
 ##### `Flight::output()`
-`Flight::output()` is a custom mapped method that combines the functionalities of `Flight::json()` (JSON response output), and the custom `Logger`. Any API response that is sent out via this method will automatically be logged, according to the preferences set in the logger.  The method is defined and configured in `routes/flight_setup.php`.
+`Flight::output()` is a custom mapped method that combines the functionalities of `Flight::json()` (JSON response output), and the custom HTTP Logger. Any API response that is sent out via this method will automatically be logged, according to the preferences set in the logger.  The method is defined and configured in `routes/flight_setup.php`.
 
 It is useful when you want the logging functionality for your request/response pairs without using Flight middleware to intercept.
 
