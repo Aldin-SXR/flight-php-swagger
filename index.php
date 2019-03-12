@@ -10,14 +10,14 @@ require_once __DIR__."/docs/swagger.php";
  * Required files, modules & libraries.
  */
 require_once __DIR__."/config/Config.php";
-foreach (glob(__DIR__."/app/utils/*.php") as $utils) {
-    require_once $utils;
+foreach (glob(__DIR__."/app/utils/*.php") as $util) {
+    require_once $util;
 }
-foreach (glob(__DIR__."/app/routes/*.php") as $routes) {
-    require_once $routes;
+foreach (glob(__DIR__."/app/routes/*.php") as $route) {
+    require_once $route;
 }
-foreach (glob(__DIR__."/app/models/*.php") as $models) {
-    require_once $models;
+foreach (glob(__DIR__."/app/models/*.php") as $model) {
+    require_once $model;
 }
 
 /**
