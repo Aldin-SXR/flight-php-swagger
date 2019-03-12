@@ -10,7 +10,7 @@ use HttpLog\HttpLogger;
 
 /* Disbale FlightPHP's internal error logger. */
 Flight::set('flight.handle_errors', false);
-HttpLogger::create("file", "full+h", __DIR__."/../../logs/debug.log", false);
+HttpLogger::create("file", "full+h", LOG_FILE, false);
 
 /* Flight middleware | Logging */
 Flight::after("start", function(&$params, &$output) {
