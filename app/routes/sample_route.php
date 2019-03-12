@@ -1,7 +1,7 @@
 <?php
 /**
  * Sample Flight endpoints for demonstrating Flight and Swagger functionalities.
- * This file can be safely removed.
+ * This file can be safely removed, or edited to suit your project needs.
  */
 
  /**
