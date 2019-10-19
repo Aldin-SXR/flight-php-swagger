@@ -14,7 +14,8 @@ class SampleModel {
     /**
      * @OA\Property(
      * description="Sample attribute of the request body. Add the attributes you need in your request body.",
-     * required=true
+     * required=true,
+     * example="A sample string."
      * )
      * @var string
      */
@@ -22,7 +23,8 @@ class SampleModel {
     /**
      * @OA\Property(
      * description="Sample attribute of the request body. Add the attributes you need in your request body.",
-     * required=true
+     * required=true,
+     * example=42
      * )
      * @var int
      */
@@ -37,8 +39,9 @@ class SampleResponse {
     /**
      * @OA\Property(
      * description="Sample success response.",
+     * example={}
      * )
-     * @var string
+     * @var array
      */
     public $success_response;
 }
