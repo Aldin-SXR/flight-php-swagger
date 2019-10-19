@@ -1,5 +1,5 @@
 <?php
-define("API_ROOT", realpath(dirname(__FILE__))."/..");
+define('API_ROOT', realpath(dirname(__FILE__)).'/..');
 
 /**
  * ModelValidator class.
@@ -16,19 +16,19 @@ class ModelValidator {
     public static function validate_model($class_name, $data) {
         $analyser = new \OpenApi\StaticAnalyser();
         $finder = \OpenApi\Util::finder([
-            API_ROOT."/models"
+            API_ROOT.'/models'
         ], null);
         /* Go through all model definitions and validate the request object */
         foreach ($finder as $file) {
             $analysis = $analyser->fromFile($file->getPathname());
             foreach ($analysis->annotations as $annotation) {
                 $model = self::extract_property($annotation->_context);
-                if (isset($model["name"]) && $model["name"] == $class_name) {
-                    if ($annotation->required === true || $annotation->required === "true") {
-                        if (!isset($data[$model["property"]]) || $data[$model["property"]] === "") {
+                if (isset($model['name']) && $model['name'] == $class_name) {
+                    if ($annotation->required === true || $annotation->required === 'true') {
+                        if (!isset($data[$model['property']]) || $data[$model['property']] === '') {
                             /* Send out an error message */
                             return [
-                                "invalid_field" => $model["property"]
+                                'invalid_field' => $model['property']
                             ];
                         }
                     }
@@ -45,14 +45,14 @@ class ModelValidator {
      */
     public static function extract_property($context) {
         $value = (string) $context;
-        $level1 = explode(" ", $value);
-        $level2 = explode("->", $level1[0]);
+        $level1 = explode(' ', $value);
+        $level2 = explode('->', $level1[0]);
         if (count($level2) != 2) {
             return NULL;
         }
         return [
-            "name" => ltrim($level2[0], "\\"),
-            "property" => $level2[1]
+            'name' => ltrim($level2[0], '\\'),
+            'property' => $level2[1]
         ];
     }
 }
