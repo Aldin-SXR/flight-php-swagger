@@ -3,6 +3,6 @@
 /.idea
 /composer.lock
 /logs/*
-/config/Config.php
+/config/config.php
 /tests/build
 !.htaccess

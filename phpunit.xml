@@ -7,7 +7,6 @@
                 <!-- Files/folders excluded from code coverage (PHP files without testable methods). Edit according to your project needs. -->
                 <directory suffix=".php">app/models</directory>
                 <directory suffix=".php">app/routes</directory>
-                <file>app/utils/Logger.php</file>
             </exclude>
         </whitelist>
     </filter>
@@ -23,9 +22,9 @@
     <testsuites>
         <testsuite name="sample-test-suite">
             <!-- Directory where tests are stored -->
-            <directory suffix="Test.php">tests/src/</directory>
+            <directory suffix="Test.php">tests/unit/</directory>
             <!-- By default, test files will be run in alphabetical file order. If you want to set a specific order of execution, define individual test files-->
-            <!-- <file>tests/src/SampleTest.php</file> -->
+            <!-- <file>tests/unit/SampleTest.php</file> -->
             <!-- Compiled code coverage results will be stored in the tests/build directory -->
         </testsuite>
     </testsuites>
