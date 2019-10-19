@@ -5,16 +5,16 @@ use HttpLog\HttpLogger;
 /**
  * FlightPHP logger.
  * Logs all incoming requests and outgoing responses into a log file, using FightPHP middleware. 
- * Contents of the log, as well as its destination, can be modified inside the app/utils/Logger.php file.
+ * Contents of the log, as well as its destination, can be modified via the HttpLogger::create() method.
  */
 
 /* Disbale FlightPHP's internal error logger. */
 Flight::set('flight.handle_errors', false);
-HttpLogger::create("file", "full+h", LOG_FILE, false);
+HttpLogger::create('file', 'full+h', LOG_FILE, false);
 
 /* Flight middleware | Logging */
-Flight::after("start", function(&$params, &$output) {
-    if (Flight::request()->url !== "/") {
+Flight::after('start', function(&$params, &$output) {
+    if (Flight::request()->url !== '/') {
         $logger = HttpLogger::get();
         $logger->log();
     }
@@ -27,7 +27,7 @@ Flight::after("start", function(&$params, &$output) {
  */
 
 /* Custom output function */
-Flight::map("output", function($data, $response_code  = 200) {
+Flight::map('output', function($data, $response_code  = 200) {
     header('Content-Type: application/json');
     Flight::json($data, $response_code);
     $logger = HttpLogger::get();
@@ -40,11 +40,11 @@ Flight::map("output", function($data, $response_code  = 200) {
  * Uses the ModelValidator utility class to validate an incoming model (request body).
  * Validation refers to the presence of all required fields inside the model (as defined in the models/ folder).
  */
-Flight::map("validate", function($class, $data) {
+Flight::map('validate', function($class, $data) {
     $validity = ModelValidator::validate_model($class, $data);
-    if ($validity && array_key_exists("invalid_field", $validity)) {
+    if ($validity && array_key_exists('invalid_field', $validity)) {
         Flight::output([
-            "error_message" => "Field `".$validity["invalid_field"]."` is required."
+            'error_message' => 'Field `'.$validity['invalid_field'].'` is required.'
         ], 400);
         die;
     }

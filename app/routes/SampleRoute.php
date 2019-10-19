@@ -15,8 +15,8 @@
  *      )
  * )
  */
-Flight::route("GET /sample/", function() {
-    Flight::json([ "sample_route" => "Sample response." ]);
+Flight::route('GET /sample/', function() {
+    Flight::json([ 'sample_route' => 'Sample response.' ]);
 });
 
  /**
@@ -53,11 +53,14 @@ Flight::route("GET /sample/", function() {
  *      }
  * )
  */
-Flight::route("POST /sample/[0-9]+", function() {
+Flight::route('POST /sample/[0-9]+', function() {
     $data = Flight::request()->data->getData();
     /* Pass in a data object for model validation; if invalid, the request will terminate. */
     Flight::validate(SampleModel::class, $data);
     Flight::json([ 
-        "success_response" => "[1]: [".$data["sample_attribute_1"]."] | [2]: [".$data["sample_attribute_2"]."]"
+        "success_response" => [
+            $data['sample_attribute_1'],
+            $data['sample_attribute_2']
+        ]
      ]);
 });
