@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-require_once __DIR__."/../../app/utils/ModelValidator.php";
+require_once __DIR__.'/../../app/utils/ModelValidator.php';
 
 /**
  * Sample test class which showcases some basic aspects of PHPUnit.
@@ -14,7 +14,7 @@ class SampleTest extends TestCase {
      * @return void
      */
     public function setUp() {
-        $this->test_var = "This is a test variable.";
+        $this->test_var = 'This is a test variable.';
     }
 
     /**
@@ -24,11 +24,11 @@ class SampleTest extends TestCase {
     public function testTestSuiteIsWorkingForPositiveAssertions() {
         /* Sample model */
         $sample_model = [
-            "sample_attribute_1" => "The answer to life, the universe and everything?",
-            "sample_attribute_2" => 42
+            'sample_attribute_1' => 'The answer to life, the universe and everything?',
+            'sample_attribute_2' => 42
         ];
         /* Assertions */
-        $this->assertEquals("This is a test variable.", $this->test_var);
+        $this->assertEquals('This is a test variable.', $this->test_var);
         $this->assertCount(2, $sample_model); 
         $this->assertNull(ModelValidator::validate_model(SampleModel::class, $sample_model));
         $this->assertTrue(true);
@@ -41,7 +41,7 @@ class SampleTest extends TestCase {
     public function testTestSuiteIsWorkingForNegativeAssertions() {
         /* Sample model */
         $sample_model = [
-            "sample_attribute_1" => "This sample model is invalid."
+            'sample_attribute_1' => 'This sample model is invalid.'
         ];
         /* Assertions */
         $this->assertNotNull(ModelValidator::validate_model(SampleModel::class, $sample_model));
