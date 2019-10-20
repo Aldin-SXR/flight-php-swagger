@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated Swagger documentation files.
 - Updated sample routes.
 - Renamed the class `ModelValidator` to `Validator`, in order to support future updates (more validators).
+- Updated PHPUnit to require a ^8.0 version, and updated the affected tests.
+- Added a section about common missing extensions to the `README` file.
 
 ## [0.6.0] - 2019-10-20
 

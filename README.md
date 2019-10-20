@@ -46,6 +46,17 @@ In case you have, or want to have, multiple site configurations, you can also en
 - [Windows (WAMP/XAMPP)](https://tomelliott.com/php/mod_rewrite-windows-apache-url-rewriting)
 - [CentOS](https://devops.ionos.com/tutorials/install-and-configure-mod_rewrite-for-apache-on-centos-7/)
 
+#### Install missing PHP extensions
+
+The project and its dependencies require certain PHP extensions to be installed. Common extensions that you may be missing could be some of the following:
+
+|Issue|Solution|
+|---|---|
+|`mbstring`|`sudo apt install php-mbstring`|
+|`zip` and `unzip` related issues |`sudo apt install zip unzip php-zip`|
+
+**Note**: As with the previous Apache 2 section, these instructions relate to Ubuntu distributions. Refer to an appropriate alternative command if using a different operating system.
+
 ### Project structure
 Once the installation is finished, you will find this structure in your project:
 
