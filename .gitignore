@@ -1,8 +1,9 @@
-/vendor
-/.vscode
-/.idea
-/composer.lock
-/logs/*
-/config/config.php
-/tests/build
+vendor/
+.vscode/
+.idea/
+composer.lock
+logs/*
+config/config.php
+tests/build/
+.phpunit.result.cache
 !.htaccess
