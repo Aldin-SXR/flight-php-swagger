@@ -13,7 +13,7 @@ class SampleTest extends TestCase {
      * Set up a test case.
      * @return void
      */
-    public function setUp() {
+    protected function setUp(): void {
         $this->test_var = 'This is a test variable.';
     }
 
@@ -52,7 +52,7 @@ class SampleTest extends TestCase {
      * Tear down a test case.
      * @return void
      */
-    public function tearDown() {
+    protected function tearDown(): void {
         $this->test_var = NULL;
     }
 }
