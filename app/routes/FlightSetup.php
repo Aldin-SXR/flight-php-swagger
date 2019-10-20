@@ -37,11 +37,11 @@ Flight::map('output', function($data, $response_code  = 200) {
 
 /**
  * Custom Flight::validate function.
- * Uses the ModelValidator utility class to validate an incoming model (request body).
+ * Uses the Validator utility class to validate an incoming model (request body).
  * Validation refers to the presence of all required fields inside the model (as defined in the models/ folder).
  */
 Flight::map('validate', function($class, $data) {
-    $validity = ModelValidator::validate_model($class, $data);
+    $validity = Validator::validate_model($class, $data);
     if ($validity && array_key_exists('invalid_field', $validity)) {
         Flight::output([
             'error_message' => 'Field `'.$validity['invalid_field'].'` is required.'
