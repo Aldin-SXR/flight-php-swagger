@@ -40,7 +40,7 @@ require_once __DIR__ . '/../config/config.php';
     <script src="<?php echo DOCS_FOLDER ?>/swagger-ui-bundle.js"> </script>
     <script src="<?php echo DOCS_FOLDER ?>/swagger-ui-standalone-preset.js"> </script>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             // Begin Swagger UI call region
             const ui = SwaggerUIBundle({
                 url: "<?php echo DOCS_FOLDER ?>/swagger.json",
@@ -56,6 +56,7 @@ require_once __DIR__ . '/../config/config.php';
                 layout: "StandaloneLayout"
             })
             // End Swagger UI call region
+
             window.ui = ui
         }
     </script>
