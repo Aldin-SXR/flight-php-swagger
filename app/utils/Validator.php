@@ -2,10 +2,10 @@
 define('API_ROOT', realpath(dirname(__FILE__)).'/..');
 
 /**
- * ModelValidator class.
+ * Validator class.
  * Class that contains the validation logic for models.
  */
-class ModelValidator {
+class Validator {
     /**
      * Validate model.
      * Given a class name and passed-in data, determine whether the data model is valid.

@@ -58,7 +58,7 @@ path/to/project
 │   │   ├── FlightSetup.php
 │   │   └── SampleRoute.php
 │   └── utils
-│       └── ModelValidator.php
+│       └── Validator.php
 ├── config
 │   ├── config.php
 │   └── config.sample.php
@@ -111,7 +111,7 @@ Change/add files to be imported according to your project needs.
 
 ```php
 Flight::route('GET /sample/@value', function($value) {
-    Flight::json([ "sample_value" => $value ]);
+    Flight::json([ 'sample_value' => $value ]);
 });
 ```
 
@@ -200,7 +200,8 @@ class SampleModel {
 ```
 In this concrete example, `description` is used to give a brief overview of the model's property, `required` determines whether the property is mandatory or not, and `example` assigns it a default value. For more information about model schemas, refer to [Swagger-PHP documentation](http://zircote.com/swagger-php/Getting-started.html#reusing-annotations-ref).
 
-The model validator class is declared and defined in `utils/ModelValidator.php`, and included as a custom mapped Flight method in `routes/FlightSetup.php`. It takes two parameters: the class against which the request body is to be validated, and the request body itself. 
+The model validator class is declared and defined in `utils/Validator.php`, and included as a custom mapped Flight method in `routes/FlightSetup.php`. It takes two parameters: the class against which the request body is to be validated, and the request body itself. 
+
 ```php
 Flight::validate(SampleModel::class, Flight::request()->data->getData());
 ```

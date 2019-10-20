@@ -39,7 +39,7 @@ class SampleResponse {
     /**
      * @OA\Property(
      * description="Sample success response.",
-     * example={}
+     * example={"path_param":1, "sample_attribute_1":"A sample string.", "sample_attribute_2":42}
      * )
      * @var array
      */

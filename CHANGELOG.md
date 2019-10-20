@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1] - 2019-10-20
+
+### Changed
+- Updated Swagger documentation files.
+- Updated sample routes.
+- Renamed the class `ModelValidator` to `Validator`, in order to support future updates (more validators).
+
 ## [0.6.0] - 2019-10-20
 
 ### Added
