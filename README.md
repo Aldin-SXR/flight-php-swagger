@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
 ![GitHub commits](https://img.shields.io/github/commits-since/aldin-sxr/flight-php-swagger/v0.6.2.svg)
 
-[Flight](http://flightphp.com/) micro-framework bundled with [Swagger](http://zircote.com/swagger-php/), [PHPUnit](https://phpunit.de/) and other useful utilities.
+[Flight](http://flightphp.com/) micro-framework bundled with [Swagger](https://zircote.github.io/swagger-php/), [PHPUnit](https://phpunit.de/) and other useful utilities.
 Designed to help kick-start the development of APIs built with the aforementioned tools by including the basic project setup, test routes and models, as well as the template for unit tests.
 
 ## Getting started
